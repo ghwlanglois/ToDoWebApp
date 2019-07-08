@@ -1,0 +1,45 @@
+.appDiv {
+    border: 2px solid black;
+    background: rgb(10, 10, 10);
+    border-radius: 1em;
+    max-width: 420px;
+}
+
+button{
+    border: 2px solid black;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 12px;
+    text-align: center;
+    border-radius: 10em;
+}
+
+li {
+    list-style-type: none;
+    color: white;
+}
+
+.addButton {
+    background: rgb(22, 191, 0);
+    padding: 10px 15px;
+    position: relative;
+    left: 30px;
+}
+
+.removeButton {
+    background: rgb(255, 10, 10);
+    padding: 5px 8px;
+}
+
+.taskText {
+    border: 1px solid black;
+    box-sizing: border-box;
+    font-weight: 350;
+    margin: 12px;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 1em;
+    position: relative;
+    left: 30px;
+}
