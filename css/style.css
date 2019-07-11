@@ -1,8 +1,14 @@
+body {
+    background-color: black;
+    user-select: none;
+}
+
 .appDiv {
-    border: 2px solid black;
-    background: rgb(10, 10, 10);
-    border-radius: 1em;
+    border: 2px transparent;
+    background: rgb(46, 49, 52);
+    border-radius: 0.25em;
     max-width: 420px;
+    margin: auto;
 }
 
 button{
@@ -12,34 +18,93 @@ button{
     font-weight: 700;
     margin: 12px;
     text-align: center;
-    border-radius: 10em;
+    border-radius: 1em;
 }
 
 li {
     list-style-type: none;
     color: white;
+    position: relative;
+    bottom: 10px;
 }
 
 .addButton {
+    border-color: transparent;
     background: rgb(22, 191, 0);
-    padding: 10px 15px;
+    padding: 5px 15px;
     position: relative;
     left: 30px;
+    color: white;
 }
 
 .removeButton {
-    background: rgb(255, 10, 10);
+    background: rgb(46, 49, 52);
+    color: white;
+    border-color: white;
     padding: 5px 8px;
+    position: relative;
+    left: 55px;
 }
 
-.taskText {
+.completeButton {
+    background: rgb(46, 49, 52);
+    color: white;
+    border-color: white;
+    padding: 5px 8px;
+    position: relative;
+    left: 45px;
+}
+
+.inputBar {
     border: 1px solid black;
     box-sizing: border-box;
     font-weight: 350;
     margin: 12px;
-    padding: 10px 15px;
+    padding: 5px 15px;
     text-align: center;
-    border-radius: 1em;
+    border-radius: 0.5em;
     position: relative;
     left: 30px;
+    user-select: all;
+}
+
+.taskInput {
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
+    user-select: all;
+}
+
+.userLogin {
+    background: rgb(32, 200, 10);
+    padding: 5px 15px;
+    position: relative;
+    left: 50px;
+    border-color: transparent;
+    color: white;
+}
+
+.addList {
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgb(32, 200, 10);
+    border-color: transparent;
+    position: relative;
+    bottom: 15px;
+    color: white;
+}
+
+.addListDiv {
+    margin: auto;
+    width: 125px;
+}
+
+.deleteList {
+    background: rgb(46, 49, 52);
+    color: white;
+    border-color: white;
+    padding: 2px 5px;
+    position: relative;
+    left: 40px;
+    bottom: 20px;
 }

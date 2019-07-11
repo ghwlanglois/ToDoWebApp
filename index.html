@@ -4,14 +4,18 @@
     <meta charset="utf-8">
     <title>Gabe's Todo Webapp</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+  	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
     <script src="src/jquery-3.4.1.min.js"></script>
     <script src="src/todo.js"></script>
   </head>
   <body>
     <div class="appDiv">
-		<input type="text" class="taskText">
-		<button class="addButton">Add Task</button>
-    	<ul class="todoList"></ul>
+      <input type="text" class="userText inputBar">
+      <button class="userLogin">Login</button>
     </div>
   </body>
 </html>
