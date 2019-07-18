@@ -7,73 +7,75 @@ $(document).on("click", ".viewAccount", async function(){
 	}
 });
 
+
+$(document).on("click", "#logout", function(){
+	location.reload();
+});
+
 $(document).on("click", ".addList", async function(){
-	var numLists = await countLists();
-	var lists = await getListData();
-	if (lists[numLists-1] != EMPTY_STRING) {
-		addListUI(numLists);
-		addList(numLists);
-	} else {
-		alert("You cannot have more than one empty task list at a time.");
-	}
+	var uuid = generate_UUID();
+	addListUI(uuid);
+	addList(uuid);
 });
 
 $(document).on("click", ".removeButton", function(){
-	var id = this.id,
-		list_index = this.parentNode.parentNode.id;
+	var id = this.parentNode.id,
+		list_index = this.parentNode.parentNode.parentNode.id;
 	removeTaskUI(id, list_index);
 	removeTask(id, list_index);
 });
 
 $(document).on("click", ".completeButton", function(){
-	var id = this.id,
-		list_index = this.parentNode.parentNode.id;
-	var done = $("#"+list_index+".todoList > #"+this.id+" > #"+this.id+".completeButton").text() == "?";
+	var id = this.parentNode.id,
+		list_index = this.parentNode.parentNode.parentNode.id,
+		done = $("#"+this.id+".completeButton").text() == "?";
 	updateCompletedUI(id, done, list_index);
 	updateCompleted(id, done, list_index);
 });
 
 $(document).on("click", ".addButton", async function(){
-	var list_index = this.id,
-		task = $("#"+this.id+".taskText").val(),
+	var list_index = this.parentNode.id,
+		task = $("#taskinput"+this.id.replace("addtaskbutton","")+".taskText").val(),
 		done = false;
 	if (task) {
 		if (task.length > 22) {
 			alert("Task description must be shorter than 23 characters.");
 		} else {
-			addTask(task, done, list_index);
-			var id = await countTasks(list_index);
-			addTaskUI(task, done, list_index, id);
+			var uuid = generate_UUID();
+			addTask(task, done, list_index, uuid);
+			addTaskUI(task, done, list_index, uuid);
 		}
 	}
 });
 
 $(document).on("click", ".deleteList", function(){
-	if ($("#"+this.id+".todoList").length > 0) {
+	var id = this.parentNode.id;
+	if ($("#listcontainer"+id+".todoList").length > 0) {
 		if (confirm('Delete this Todo List?')) {
-			removeList(this.id);
+			removeList(id);
 		}
 	} else {
-		removeList(this.id);
+		removeList(id);
 	}
-	removeListUI(this.id);
+	removeListUI(id);
 });
 
 $(document).on("change", ".taskInput", async function() {
 	var text = $("#"+this.id+".taskInput").val(),
-		list_index = this.parentNode.parentNode.id;
+		id = this.id.replace("input", "");
+		list_index = this.parentNode.parentNode.parentNode.id;
 	if (text != "") {
 		if (text.length <= 22) {
-			var data = await getTaskData(list_index);
-			data[this.id] = text;
-			setTaskData(list_index, data);
+			var data = await getSingleTask(list_index, id);
+			data["task"] = text;
+			database.ref(username+"/lists/"+list_index+"/"+id).set(data);
 		} else {
 			alert("Task description must be shorter than 23 characters.");
-			resetTaskText(list_index, this.id);
+			resetTaskText(list_index, id);
 		}
 	} else {
 		alert("Cannot create an empty task.");
-		resetTaskText(list_index, this.id);
+		resetTaskText(list_index, id);
 	}
 });
 

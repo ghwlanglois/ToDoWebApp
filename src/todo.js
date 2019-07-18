@@ -1,29 +1,23 @@
 async function updateCompleted(taskId, done, list_index) {
-	var completed_data = await getTaskData(list_index);
-	completed_data[taskId]["completed"] = done;
-	setTaskData(list_index, completed_data);
+	var data = await getSingleTask(list_index, taskId);
+	data["completed"] = done;
+	database.ref(username+"/lists/"+list_index+"/"+taskId).set(data);
 }
 
-async function removeTask(id, list_index) {
-	var task_data = await getTaskData(list_index);
-	task_data.splice(id, 1);
-	setTaskData(list_index, task_data);
+function removeTask(id, list_index) {
+	database.ref(username+"/lists/"+list_index+"/"+id).remove();
 }
 
-async function addTask(task, done, list_index) {
-	var task_data = await getTaskData(list_index);
-	if (task_data == EMPTY_STRING)
-		task_data = [];
-	task_data.push({task: task, completed: done});
-	setTaskData(list_index, task_data);
+function addTask(task, done, list_index, taskId) {
+	database.ref(username+"/lists/"+list_index+"/"+taskId).set({task: task, completed: done});
 }
 
 function removeList(list_index) {
-	removeListFromDB(list_index);
+	database.ref(username+"/lists/"+list_index).remove();
 }
 
-function addList(list_index) {
-	addListToDB(list_index);
+async function addList(list_index) {
+	database.ref(username+"/lists/"+list_index+"/"+generate_UUID()).set({});
 }
 
 async function countLists() {
@@ -39,8 +33,7 @@ async function countTasks(list_index) {
 async function processLogin() {
 	var newUser = await isNewUser();
 	if (!newUser) {
-		var numLists = await countLists();
-		populateUIFromDatabase(numLists);
+		populateUIFromDatabase();
 	} else {
 		queryAccountInfo();
 	}

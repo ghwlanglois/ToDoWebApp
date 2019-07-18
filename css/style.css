@@ -3,6 +3,21 @@ body {
     user-select: none;
 }
 
+img {
+    width: 74%;
+    margin: auto;
+    display: block;
+    padding: 20px;
+}
+
+h1 {
+    color: white;
+    font-family: Trebuchet MS;
+    text-align: center;
+    position: relative;
+    top: 15px;
+}
+
 .totalDiv {
     padding-top: 50px;
 }
@@ -47,21 +62,19 @@ li {
     color: white;
 }
 
-.removeButton {
+.removeButton, .completeButton, #logout {
     background: rgb(46, 49, 52);
     color: white;
     border-color: white;
     padding: 5px 8px;
     position: relative;
+}
+
+.removeButton {
     left: 55px;
 }
 
 .completeButton {
-    background: rgb(46, 49, 52);
-    color: white;
-    border-color: white;
-    padding: 5px 8px;
-    position: relative;
     left: 45px;
 }
 
@@ -89,7 +102,8 @@ li {
     background: rgb(32, 200, 10);
     padding: 5px 15px;
     position: relative;
-    left: 50px;
+    left: 167px;
+    bottom: 5px;
     border-color: transparent;
     color: white;
 }
@@ -120,20 +134,36 @@ li {
 .addListDiv {
     margin: auto;
     width: 250px;
+    position: relative;
+    top: 5px;
 }
 
-.deleteList {
+.deleteList, .downarrow, .uparrow {
     background: rgb(46, 49, 52);
     color: white;
     border-color: white;
     padding: 2px 5px;
     position: relative;
+    display: inline;
+}
+
+.deleteList {
     left: 40px;
     bottom: 20px;
 }
 
+.uparrow {
+    left: -20px;
+    bottom: 72px;
+}
+
+.downarrow {
+    left: -68px;
+    bottom: -85px;
+}
+
 #accountAppDiv {
-    height: 140px;
+    height: 95px;
     position: relative;
     bottom: 25px;
 }
@@ -147,4 +177,21 @@ li {
 i {
     position: relative;
     right: 10px;
+}
+
+#loginbar {
+    position: relative;
+    left: 100px;
+}
+
+#logout {
+    left: 147px;
+    bottom: 62px;
+}
+
+#second_info {
+    position: relative;
+    left: 180px;
+    bottom: 65px;
+    width: 130px;
 }
