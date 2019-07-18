@@ -1,4 +1,5 @@
 function generate_UUID() {
+	// Copied pastad from the web
 	return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
 		(c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
 	)
@@ -98,11 +99,11 @@ async function populateUIFromDatabase() {
 }
 
 async function initNewUser() {
-	initButtons();
 	var list_uuid = generate_UUID();
 	var task_uuid = generate_UUID();
 	addList(list_uuid);
 	addListUI(list_uuid);
 	database.ref(username+"/lists/"+list_uuid+"/"+task_uuid).set({task: "Welcome "+username, completed: false});
 	addTaskUI("Welcome "+username, false, list_uuid, task_uuid);
+	initButtons();
 }
