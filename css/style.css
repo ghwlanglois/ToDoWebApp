@@ -3,6 +3,10 @@ body {
     user-select: none;
 }
 
+.totalDiv {
+    padding-top: 50px;
+}
+
 .appDiv {
     border: 2px transparent;
     background: rgb(46, 49, 52);
@@ -26,6 +30,12 @@ li {
     color: white;
     position: relative;
     bottom: 10px;
+    font: 400 13.3333px Arial;
+}
+
+.userInfoDiv {
+    margin: auto;
+    max-width: 420px;
 }
 
 .addButton {
@@ -84,7 +94,20 @@ li {
     color: white;
 }
 
-.addList {
+.userRegistered {
+    background: rgb(32, 200, 10);
+    padding: 5px 15px;
+    position: relative;
+    left: 155px;
+    border-color: transparent;
+    color: white;
+}
+
+.registerBar {
+    width: 80%;
+}
+
+.addList, .viewAccount {
     display: inline-block;
     padding: 5px 15px;
     background: rgb(32, 200, 10);
@@ -96,7 +119,7 @@ li {
 
 .addListDiv {
     margin: auto;
-    width: 125px;
+    width: 250px;
 }
 
 .deleteList {
@@ -107,4 +130,21 @@ li {
     position: relative;
     left: 40px;
     bottom: 20px;
+}
+
+#accountAppDiv {
+    height: 140px;
+    position: relative;
+    bottom: 25px;
+}
+
+#user_info, #email_info, #phone_info, #cheese_info {
+    bottom: -20px;
+    padding: 5px;
+    left: 8px;
+}
+
+i {
+    position: relative;
+    right: 10px;
 }
