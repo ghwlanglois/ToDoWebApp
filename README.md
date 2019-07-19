@@ -5,6 +5,6 @@ Installation: npm install --save-dev jest
 
 Run Test: npm run test
 
-![Screenshot](img/screenshot.png)
+![Screenshot](https://ibb.co/ThhVfXD)
 
-![Database](img/database.png)
+![Database](https://ibb.co/L0dnDB6)
