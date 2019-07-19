@@ -20,6 +20,8 @@ The database is structured as follows using UIDs:
 			|__phone number
 			|__favorite cheese
 
+Example:
+
 ![Database](https://i.ibb.co/zstRtZj/database.png)
 
 Jest is used for unit testing
