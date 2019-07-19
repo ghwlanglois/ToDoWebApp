@@ -9,16 +9,16 @@ Users can also view their account information, which they entered upon logging i
 
 The database is structured as follows using UIDs:
 
-__username
-	|__ lists
-	|	|__list UID
-	|		|__task UID
-	|			|__task name
-	|			|__is completed
-	|__ userinfo
-		|__email address
-		|__phone number
-		|__favorite cheese
+	username
+		|__ lists
+		|	|__list UID
+		|		|__task UID
+		|			|__task name
+		|			|__is completed
+		|__ userinfo
+			|__email address
+			|__phone number
+			|__favorite cheese
 
 ![Database](https://i.ibb.co/zstRtZj/database.png)
 
