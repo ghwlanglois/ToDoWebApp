@@ -5,6 +5,8 @@ Users can create an unlimited number of lists which can be deleted, each with a 
 
 Users can also view their account information, which they entered upon logging in as a new user.
 
+To run this WebApp, clone the repository and open index.html in your favorite web browser.
+
 ![Screenshot](https://i.ibb.co/sKHXjT6/screenshot.png)
 
 The database is structured as follows using UIDs:
