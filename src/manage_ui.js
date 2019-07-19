@@ -21,7 +21,7 @@ function queryAccountInfo() {
 }
 
 async function initButtons() {
-	$("body").find(".totalDiv").prepend("<div style=\"position: relative; bottom: 17px;\" class=\"appDiv\">\
+	$("body").prepend("<div style=\"position: relative; bottom: -34px;\" class=\"appDiv\">\
 									        <h1>Gabe's Todo Webapp</h1>\
 									        <img src=\"img/jg_logo.png\" alt=\"JG Logo\">\
 								        </div>");
