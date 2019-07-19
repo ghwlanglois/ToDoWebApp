@@ -22,7 +22,7 @@ The database is structured as follows using UIDs:
 
 Example:
 
-![Database](https://i.ibb.co/zstRtZj/database.png)
+![Database](https://i.ibb.co/JHJSmMW/68747470733a2f2f692e6962622e636f2f7a737452745a6a2f64617461626173652e706e67.png)
 
 Jest is used for unit testing
 
