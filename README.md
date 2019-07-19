@@ -1,9 +1,13 @@
 # ToDoWebApp
 This WebApp uses firebase and jQuery to prompt the user for an unprotected login, which leads them to a ToDo-List style application.
+
 Users can create an unlimited number of lists which can be deleted, each with a limitless number of tasks which can be edited and deleted individually, as well as being marked complete.
+
 Users can also view their account information, which they entered upon logging in as a new user.
 
 ![Screenshot](https://i.ibb.co/sKHXjT6/screenshot.png)
+
+The database is structured as follows using UIDs:
 
 ![Database](https://i.ibb.co/zstRtZj/database.png)
 
