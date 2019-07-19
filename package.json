@@ -10,5 +10,10 @@
   "dependencies": {
     "firebase": "^6.2.4",
     "jquery": "^3.4.1"
+  },
+  "jest": {
+    "roots": [
+      "resources/static/js"
+    ]
   }
 }

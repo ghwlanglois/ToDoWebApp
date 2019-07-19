@@ -1,7 +1,7 @@
 # ToDoWebApp
 This WebApp uses firebase and jQuery to prompt the user for an unprotected login, which leads them to a ToDo-List style application.
 
-Users can create an unlimited number of lists which can be deleted, each with a limitless number of tasks which can be edited and deleted individually, as well as being marked complete.
+Users can create an unlimited number of lists which can be deleted, each with a limitless number of tasks which can be edited and deleted individually, as well as being marked as complete.
 
 Users can also view their account information, which they entered upon logging in as a new user.
 
@@ -26,7 +26,7 @@ Example:
 
 Jest is used for unit testing
 
-todo.test.js is in "resources/static/js" as jest requires the test file to be in the same directory as the file it requires.
+todo.test.js is in "resources/static/js" as jest requires the unit test file to be in the same directory as the file that it requires.
 
 Installation: npm install --save-dev jest
 
